@@ -3,6 +3,7 @@ package com.example.gui;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.FileChooser;
@@ -16,7 +17,7 @@ public class CR_Scene_1 {
     private File file;
 
     @FXML
-    private Stage stage = new Stage();
+    private Stage stage;
     @FXML
     private Scene scene;
     @FXML
@@ -26,6 +27,7 @@ public class CR_Scene_1 {
     @FXML
     public void toScene2(ActionEvent e) throws IOException {
 
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow(); // not to create multiple stages
         FileChooser fc = new FileChooser();
         data.setFile(fc.showOpenDialog(stage));
 
