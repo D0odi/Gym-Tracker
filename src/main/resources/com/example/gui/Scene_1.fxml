@@ -4,9 +4,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_Scene_1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_Scene_1">
    <children>
-      <Button layoutX="183.0" layoutY="129.0" mnemonicParsing="false" onAction="#toScene2" prefHeight="114.0" prefWidth="218.0" text="Choose file">
+      <Button layoutX="91.0" layoutY="143.0" mnemonicParsing="false" onAction="#toScene2" prefHeight="114.0" prefWidth="218.0" text="Choose file">
          <font>
             <Font size="27.0" />
          </font></Button>

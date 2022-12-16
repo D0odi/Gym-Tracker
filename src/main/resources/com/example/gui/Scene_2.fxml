@@ -5,24 +5,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_Scene_2">
+<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_Scene_2">
    <children>
-      <Text fx:id="text" layoutX="2.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chosen file:" textAlignment="CENTER" wrappingWidth="600.0">
+      <Text fx:id="text" layoutX="24.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chosen file:" textAlignment="CENTER" wrappingWidth="363.4755859375">
          <font>
             <Font size="26.0" />
          </font>
       </Text>
-      <Button layoutX="181.0" layoutY="121.0" mnemonicParsing="false" text="Check Excersise Data">
+      <Button layoutX="92.0" layoutY="108.0" mnemonicParsing="false" onAction="#CheckExercise" text="Check Excersise Data">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button layoutX="197.0" layoutY="200.0" mnemonicParsing="false" text="Write down to file">
+      <Button layoutX="107.0" layoutY="186.0" mnemonicParsing="false" onAction="#WriteDown" text="Write down to file">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button layoutX="269.0" layoutY="323.0" mnemonicParsing="false" text="Quit">
+      <Button layoutX="179.0" layoutY="309.0" mnemonicParsing="false" onAction="#Quit" text="Quit">
          <font>
             <Font size="24.0" />
          </font>
