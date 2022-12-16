@@ -1,11 +1,14 @@
 package com.example.gui;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.net.URL;
@@ -23,20 +26,24 @@ public class CR_ExDataCheck implements Initializable {
     private ListView<String> list;
 
     @FXML
-    private Label label;
+    private Text text;
 
     private Scanner scnr = new Scanner(System.in);
 
     Data data = Data.getInstance();
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println(data.listEx());
-        data.getExInfo(scnr.nextInt());
+        list.getItems().addAll(data.listEx());
 
-  /*      if (scnr.next().charAt(0) == 'y') {
-            choose_exercise();
-        }
-   */
+        list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+                String choice = list.getSelectionModel().getSelectedItem();
+                Exercise selected = data.getExercise(choice);
+                text.setText(selected.printInfo());
+            }
+        });
     }
+
 
 }

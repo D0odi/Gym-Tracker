@@ -68,10 +68,17 @@ public class Exercise {
     }
   }
 */
-    public void printInfo() {
-      System.out.println(name + " results:");
-      for (ArrayList<Double> n : volumes) {
-          System.out.println("weight: " + n.get(0) + " - reps: " + n.get(1));
+    public String printInfo() {
+        StringBuilder info = new StringBuilder();
+        int border = 0;
+        for (int i = volumes.size() - 1; i > 0; i--) {
+            String temp = volumes.get(i).get(0) + "   /   " + volumes.get(i).get(1) +"\n";
+          info.append(temp);
+          border++;
+          if(border==15){
+              break;
+          }
         }
+        return info.toString();
     }
 }

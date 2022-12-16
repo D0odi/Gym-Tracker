@@ -16,9 +16,6 @@ public class Data {
         return data;
     }
 
-    public String getFilePath() {
-        return file.getAbsolutePath();
-    }
     public String getFileName() { return file.getName(); }
 
     public void setFile(File file) {
@@ -67,17 +64,20 @@ public class Data {
 
         return nums;
     }
-    public String listEx() { //returns a string to print out
-        StringBuffer ss = new StringBuffer(""); //builds a string to return
-
-        for (int i = 0; i < exercises.size(); i++) {
-            ss.append(i);
-            ss.append(" ");
-            ss.append(exercises.get(i).getName());
-            ss.append('\n');
+    public ArrayList<String> listEx() { //returns a string to print out
+        ArrayList<String> names = new ArrayList<>();
+        for (Exercise n : exercises) {
+            names.add(n.getName());
         }
-
-        return ss.toString();
+        return names;
+    }
+    public Exercise getExercise(String name) {
+        for (Exercise n : exercises) {
+            if (n.getName().equals(name)) {
+                return n;
+            }
+        }
+        return null;
     }
     public void getExInfo(int n) { //gets info from exercises
         exercises.get(n).printInfo();
