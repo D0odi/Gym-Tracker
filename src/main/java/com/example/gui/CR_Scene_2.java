@@ -33,17 +33,18 @@ public class CR_Scene_2 implements Initializable {
         text.setText("Current file: " + data.getFileName());
     }
     public void CheckExercise(ActionEvent e) throws IOException{
-
-
-        data.read_data();
-
         stage = (Stage)((Node)e.getSource()).getScene().getWindow(); // not to create multiple stages
         root = FXMLLoader.load(getClass().getResource("ExDataCheck.fxml"));
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-    public void WriteDown(ActionEvent e) {
+    public void WriteDown(ActionEvent e) throws IOException {
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow(); // not to create multiple stages
+        root = FXMLLoader.load(getClass().getResource("StoreData.fxml"));
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
     public void Quit(ActionEvent e) {
 

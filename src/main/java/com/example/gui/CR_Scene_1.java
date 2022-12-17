@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CR_Scene_1 {
     @FXML
@@ -28,14 +29,19 @@ public class CR_Scene_1 {
     public void toScene2(ActionEvent e) throws IOException {
 
         stage = (Stage)((Node)e.getSource()).getScene().getWindow(); // not to create multiple stages
+
+        FileChooser.ExtensionFilter txt = new FileChooser.ExtensionFilter("Text Files", "*.txt");
         FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().add(txt);
         data.setFile(fc.showOpenDialog(stage));
 
 
         root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
         scene = new Scene(root);
-
         stage.setScene(scene);
         stage.show();
+
+
+        data.read_data();
     }
 }

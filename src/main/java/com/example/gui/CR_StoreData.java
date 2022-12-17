@@ -9,18 +9,20 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.net.spi.InetAddressResolver;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class CR_ExDataCheck implements Initializable {
-    @FXML
+public class CR_StoreData implements Initializable {
+    Data data = Data.getInstance();
+
     private Stage stage;
     @FXML
     private Scene scene;
@@ -34,26 +36,44 @@ public class CR_ExDataCheck implements Initializable {
 
     private Scanner scnr = new Scanner(System.in);
 
-    Data data = Data.getInstance();
 
+    @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         list.getItems().addAll(data.listEx());
         list.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 String choice = list.getSelectionModel().getSelectedItem();
-                Exercise selected = data.getExercise(choice);
-                text.setText(selected.printInfo());
+                data.setTempEx(data.getExercise(choice));
+
+                Parent root1 = null;
+                try {
+                    root1 = FXMLLoader.load(getClass().getResource("enterData.fxml"));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                Stage enterVolumes = new Stage();
+                Scene scene1 = new Scene(root1);
+                enterVolumes.setScene(scene1);
+                enterVolumes.setResizable(false);
+                enterVolumes.show();
+
             }
         });
     }
-    public void back(ActionEvent e) throws IOException {
+    public void newOne(ActionEvent e) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("enterData(NewEx).fxml"));
+        Stage enterVolumes = new Stage();
+        Scene scene1 = new Scene(root1);
+        enterVolumes.setScene(scene1);
+        enterVolumes.setResizable(false);
+        enterVolumes.show();
+    }
+    public void back(ActionEvent e) throws IOException{
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-
-
 }

@@ -1,5 +1,7 @@
 package com.example.gui;
 
+import javafx.scene.control.ListView;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,6 +10,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Data {
+    private Exercise temp;
+    private ArrayList<String> list;
     private static final Data data = new Data();
     private Data(){}
     private File file;
@@ -15,7 +19,6 @@ public class Data {
     public static Data getInstance() {
         return data;
     }
-
     public String getFileName() { return file.getName(); }
 
     public void setFile(File file) {
@@ -81,5 +84,58 @@ public class Data {
     }
     public void getExInfo(int n) { //gets info from exercises
         exercises.get(n).printInfo();
+    }
+    public static void store_data() {
+        double w, r;
+        String name = null, wTemp = null, rTemp = null;
+
+  /*      data.addEmptyEx("New one?");
+        System.out.println(data.listEx());
+       int spot = scnr.nextInt();
+
+        boolean newExer = false;
+        if (spot == acc.getListSize() - 1) {
+            newExer = true;
+            System.out.print("Enter name: ");
+            name = scnr.next();
+        }
+
+        System.out.print("Enter weight: ");
+        wTemp = scnr.next();
+        System.out.print("Enter reps: ");
+        rTemp = scnr.next();
+
+        try {
+            w = Double.parseDouble(wTemp);
+            r = Double.parseDouble(rTemp);
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Wrong Input Format\n");
+            return;
+        }
+
+        if (newExer) {
+            acc.writeToNewEx(name, w, r);
+        }
+        else {
+            acc.writeToExistingEx(spot, w, r);
+            acc.deleteEx(acc.getListSize() - 1);
+        }
+
+   */
+    }
+    public void addEmptyEx(String name) {
+        Exercise newOne = new Exercise(name);
+        exercises.add(newOne);
+    }
+
+    public void addEx(String name, ArrayList<ArrayList<Double>> volumes) {
+        exercises.add(new Exercise(name, volumes));
+    }
+    public void setTempEx(Exercise choice) {
+        this.temp = choice;
+    }
+    public Exercise getTemp() {
+        return temp;
     }
 }
