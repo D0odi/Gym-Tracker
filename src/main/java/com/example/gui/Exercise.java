@@ -1,25 +1,4 @@
 package com.example.gui;
-/* Exercise Class
-  @author: Lev Natekin
-  @author: Kevin Zhang
-
-  the Exercise class controls the data of each indivdual exercise
-
-  VARIABLES:
-  private ArrayList<ArrayList<Double>> volumes;
-  private String name;
-
-  METHODS:
-  public Exercise(String name, ArrayList<ArrayList<Double>> volume);
-  public Exercise(String name);
-  public void setName(String name);
-  public ArrayList<Double> getSet(int place);
-  public String getName();
-  public void addVolume(double weight, double reps);
-  public void deleteVolume(int spot);
-  public int getVolLength();
-  public void printInfo();
-*/
 
 import java.util.ArrayList;
 

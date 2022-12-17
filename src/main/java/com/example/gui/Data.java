@@ -3,7 +3,9 @@ package com.example.gui;
 import javafx.scene.control.ListView;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -30,7 +32,7 @@ public class Data {
 
         Pattern ptVolume = Pattern.compile("\\d\\d?\\.?\\d?\\.?\\d?\\.?\\*?\\d?\\d?\\.?\\d?\\.?");
         Pattern exName = Pattern.compile("[a-zA-Z]+");
-        Pattern toNums = Pattern.compile("\\d\\d?\\.?\\d?\\.?\\d?");
+        Pattern toNums = Pattern.compile("\\d\\d?\\.?\\d?\\.?\\d?\\.?\\d?");
         Matcher for_file;
 
         while(file_scan.hasNext()) {
@@ -43,8 +45,8 @@ public class Data {
             for_file = ptVolume.matcher(line);
 
             while (for_file.find()) {
-                String data = for_file.group();
-                ArrayList<Double> set = toVolumes(data, toNums);
+                String input = for_file.group();
+                ArrayList<Double> set = toVolumes(input, toNums);
                 volume.add(set);
             }
 
@@ -137,5 +139,41 @@ public class Data {
     }
     public Exercise getTemp() {
         return temp;
+    }
+    public void reWrite() throws IOException {
+        FileWriter fw = new FileWriter(file);
+        DecimalFormat f = new DecimalFormat("0.#");
+        StringBuilder ss = new StringBuilder("");
+
+        for (Exercise ex: exercises) {
+            ss.append(ex.getName());
+            ss.append(' ');
+            ss.append('-');
+            ss.append(' ');
+
+            int len = ex.getVolLength();
+
+            for (int i = 0; i < len; i++) {
+                ArrayList<Double> tempList = ex.getSet(i);
+                ss.append(f.format(tempList.get(0)));
+                ss.append('*');
+                ss.append(f.format(tempList.get(1)));
+                ss.append(';');
+                ss.append(' ');
+            }
+
+            int ssLen = ss.length();
+            ss.delete(ssLen-2, ssLen);
+
+            ss.append('\n');
+        }
+
+        ss.delete(ss.length()-1, ss.length());
+        String s = ss.toString();
+
+        for (int i = 0; i < s.length(); i++)
+            fw.write(s.charAt(i));
+
+        fw.close();
     }
 }

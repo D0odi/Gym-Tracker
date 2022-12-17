@@ -3,16 +3,22 @@ package com.example.gui;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 public class CR_enterData_newEx {
+
+    Data data = Data.getInstance();
     @FXML
     private Stage stage;
     @FXML
@@ -25,7 +31,6 @@ public class CR_enterData_newEx {
     private TextField weight;
     @FXML
     private TextField rep;
-    Data data = Data.getInstance();
     public void OK(ActionEvent e) throws IOException {
         ArrayList<ArrayList<Double>> volumes = new ArrayList<ArrayList<Double>>();
         ArrayList<Double> day = new ArrayList<>();

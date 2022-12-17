@@ -6,27 +6,27 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="150.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_enterData_newEx">
+<AnchorPane prefHeight="140.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_enterData_newEx">
    <children>
-      <Text layoutX="13.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" wrappingWidth="88.13671875">
+      <Text layoutX="13.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" wrappingWidth="88.13671875">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="34.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reps:" wrappingWidth="50.13671875">
+      <Text layoutX="34.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reps:" wrappingWidth="50.13671875">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="weight" layoutX="99.0" layoutY="44.0" prefHeight="25.0" prefWidth="88.0" />
-      <TextField fx:id="rep" layoutX="99.0" layoutY="71.0" prefHeight="25.0" prefWidth="88.0" />
-      <Text layoutX="24.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="88.13671875">
+      <TextField fx:id="weight" layoutX="99.0" layoutY="39.0" prefHeight="25.0" prefWidth="88.0" />
+      <TextField fx:id="rep" layoutX="99.0" layoutY="66.0" prefHeight="25.0" prefWidth="88.0" />
+      <Text layoutX="24.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="88.13671875">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="input" layoutX="99.0" layoutY="17.0" prefHeight="25.0" prefWidth="88.0" />
-      <Button layoutX="76.0" layoutY="109.0" mnemonicParsing="false" onAction="#OK" prefHeight="25.0" prefWidth="50.0" text="OK">
+      <TextField fx:id="input" layoutX="99.0" layoutY="12.0" prefHeight="25.0" prefWidth="88.0" />
+      <Button layoutX="76.0" layoutY="104.0" mnemonicParsing="false" onAction="#OK" prefHeight="25.0" prefWidth="50.0" text="OK">
          <font>
             <Font size="13.0" />
          </font>
