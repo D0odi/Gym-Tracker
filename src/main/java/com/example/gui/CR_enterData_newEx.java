@@ -15,6 +15,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class CR_enterData_newEx {
 
@@ -34,16 +36,37 @@ public class CR_enterData_newEx {
     public void OK(ActionEvent e) throws IOException {
         ArrayList<ArrayList<Double>> volumes = new ArrayList<ArrayList<Double>>();
         ArrayList<Double> day = new ArrayList<>();
+        String nameInput = input.getText();
+        try {
+            Pattern checkName = Pattern.compile("[a-zA-Z0-9]+\\s?([a-zA-Z0-9]+)?\\s?([a-zA-Z0-9]+)?\\s?([a-zA-Z0-9]+)?\\s?([a-zA-Z0-9]+)?");
+            Matcher check = checkName.matcher(nameInput);
+            check.find();
+            String name = check.group();
+            if (!nameInput.equals(name)) {
+                loadError();
+                return;
+            }
+        } catch (Exception ex) {
+            loadError();
+            return;
+        }
         Double reps = Double.parseDouble(rep.getText());
         Double weights = Double.parseDouble(weight.getText());
         day.add(weights);
         day.add(reps);
         volumes.add(day);
-        String name = input.getText();
 
-        data.addEx(name, volumes);
+        data.addEx(nameInput, volumes);
 
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         stage.close();
+    }
+
+    private void loadError() throws IOException {
+        Stage error = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("ErrorMsgInvalidName.fxml"));
+        Scene errorName = new Scene(root);
+        error.setScene(errorName);
+        error.show();
     }
 }

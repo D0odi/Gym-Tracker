@@ -32,17 +32,21 @@ public class Data {
         Scanner file_scan = new Scanner(file);
 
         Pattern ptVolume = Pattern.compile("\\d\\d?\\.?\\d?\\.?\\d?\\.?\\*?\\d?\\d?\\.?\\d?\\.?");
-        Pattern exName = Pattern.compile("[a-zA-Z]+");
+        Pattern exName = Pattern.compile("[a-zA-Z0-9]+\\s?([a-zA-Z0-9]+)?\\s?([a-zA-Z0-9]+)?\\s?([a-zA-Z0-9]+)?\\s?([a-zA-Z0-9]+)?");
         Pattern toNums = Pattern.compile("\\d\\d?\\.?\\d?\\.?\\d?\\.?\\d?");
         Matcher for_file;
 
         while(file_scan.hasNext()) {
             ArrayList<ArrayList<Double>> volume = new ArrayList<>();
             String line = file_scan.nextLine();
+            System.out.println(line);
 
             for_file = exName.matcher(line);
             for_file.find();
             String name = for_file.group();
+            line = line.replaceFirst(name, "");
+            System.out.println(line);
+            System.out.println();
             for_file = ptVolume.matcher(line);
 
             while (for_file.find()) {
