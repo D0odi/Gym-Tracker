@@ -47,7 +47,7 @@ public class CR_Scene_2 implements Initializable {
         stage.show();
     }
     public void Quit(ActionEvent e) throws IOException {
-     //   data.reWrite(); turn one ones fixed
+        data.reWrite();
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         stage.close();
     }
