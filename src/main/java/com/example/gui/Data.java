@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -142,6 +143,7 @@ public class Data {
     }
     public void reWrite() throws IOException {
         FileWriter fw = new FileWriter(file);
+        Locale.setDefault(Locale.US);
         DecimalFormat f = new DecimalFormat("0.#");
         StringBuilder ss = new StringBuilder("");
 
