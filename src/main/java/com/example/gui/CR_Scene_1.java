@@ -31,9 +31,8 @@ public class CR_Scene_1 {
 
         stage = (Stage)((Node)e.getSource()).getScene().getWindow(); // not to create multiple stages
 
-        FileChooser.ExtensionFilter txt = new FileChooser.ExtensionFilter("Text Files", "*.txt");
         FileChooser fc = new FileChooser();
-        fc.getExtensionFilters().add(txt);
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
         data.setFile(fc.showOpenDialog(stage));
 
 
@@ -46,9 +45,12 @@ public class CR_Scene_1 {
         data.read_data();
     }
     public void toScene2_newFile(ActionEvent e) throws IOException {
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow(); // not to create multiple stages
-        File gym = new File("D:\\Gym.txt");
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        FileChooser fc = new FileChooser();
+        fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+        fc.setInitialFileName("Gym.txt");
         try {
+            File gym = fc.showSaveDialog(stage);
             if (gym.createNewFile()) {
                 data.setFile(gym);
                 root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
