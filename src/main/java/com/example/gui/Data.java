@@ -1,6 +1,11 @@
 package com.example.gui;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -16,13 +21,20 @@ public class Data {
     private Exercise temp;
     private ArrayList<String> list;
     private static final Data data = new Data();
-    private Data(){}
+
+    private Data() {
+    }
+
     private File file;
     private ArrayList<Exercise> exercises = new ArrayList<>();
+
     public static Data getInstance() {
         return data;
     }
-    public String getFileName() { return file.getName(); }
+
+    public String getFileName() {
+        return file.getName();
+    }
 
     public void setFile(File file) {
         this.file = file;
@@ -36,7 +48,7 @@ public class Data {
         Pattern toNums = Pattern.compile("\\d\\d?\\.?\\d?\\.?\\d?\\.?\\d?");
         Matcher for_file;
 
-        while(file_scan.hasNext()) {
+        while (file_scan.hasNext()) {
             ArrayList<ArrayList<Double>> volume = new ArrayList<>();
             String line = file_scan.nextLine();
             System.out.println(line);
@@ -45,13 +57,20 @@ public class Data {
             for_file.find();
             String name = for_file.group();
             line = line.replaceFirst(name, "");
+            name = name.substring(0, name.length() - 1);
             System.out.println(line);
             System.out.println();
             for_file = ptVolume.matcher(line);
 
             while (for_file.find()) {
                 String input = for_file.group();
-                ArrayList<Double> set = toVolumes(input, toNums);
+                ArrayList<Double> set = new ArrayList<>();
+                try {
+                    set = toVolumes(input, toNums);
+                } catch (Exception ex) {
+                    System.out.print(line);
+                    set.add(0.0);
+                }
                 volume.add(set);
             }
 
@@ -61,6 +80,7 @@ public class Data {
 
         file_scan.close();
     }
+
     public ArrayList<Double> toVolumes(String data, Pattern pt) {
         ArrayList<Double> nums = new ArrayList<>();
         Matcher converter = pt.matcher(data);
@@ -74,6 +94,7 @@ public class Data {
 
         return nums;
     }
+
     public ArrayList<String> listEx() { //returns a string to print out
         ArrayList<String> names = new ArrayList<>();
         for (Exercise n : exercises) {
@@ -81,6 +102,7 @@ public class Data {
         }
         return names;
     }
+
     public Exercise getExercise(String name) {
         for (Exercise n : exercises) {
             if (n.getName().equals(name)) {
@@ -89,9 +111,11 @@ public class Data {
         }
         return null;
     }
+
     public void getExInfo(int n) { //gets info from exercises
         exercises.get(n).printInfo();
     }
+
     public static void store_data() {
         double w, r;
         String name = null, wTemp = null, rTemp = null;
@@ -131,6 +155,7 @@ public class Data {
 
    */
     }
+
     public void addEmptyEx(String name) {
         Exercise newOne = new Exercise(name);
         exercises.add(newOne);
@@ -139,19 +164,21 @@ public class Data {
     public void addEx(String name, ArrayList<ArrayList<Double>> volumes) {
         exercises.add(new Exercise(name, volumes));
     }
+
     public void setTempEx(Exercise choice) {
         this.temp = choice;
     }
+
     public Exercise getTemp() {
         return temp;
     }
+
     public void reWrite() throws IOException {
         FileWriter fw = new FileWriter(file);
         Locale.setDefault(Locale.US);
         DecimalFormat f = new DecimalFormat("0.#");
         StringBuilder ss = new StringBuilder("");
-
-        for (Exercise ex: exercises) {
+        for (Exercise ex : exercises) {
             ss.append(ex.getName());
             ss.append(' ');
             ss.append('-');
@@ -169,17 +196,24 @@ public class Data {
             }
 
             int ssLen = ss.length();
-            ss.delete(ssLen-2, ssLen);
+            ss.delete(ssLen - 2, ssLen);
 
             ss.append('\n');
         }
-
-        ss.delete(ss.length()-1, ss.length());
         String s = ss.toString();
 
         for (int i = 0; i < s.length(); i++)
             fw.write(s.charAt(i));
 
         fw.close();
+    }
+
+
+    public void loadError() throws IOException{
+        Stage error = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("ErrorMsgInvalidName.fxml"));
+        Scene errorName = new Scene(root);
+        error.setScene(errorName);
+        error.show();
     }
 }

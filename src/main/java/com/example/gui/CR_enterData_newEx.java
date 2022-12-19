@@ -43,30 +43,27 @@ public class CR_enterData_newEx {
             check.find();
             String name = check.group();
             if (!nameInput.equals(name)) {
-                loadError();
+                data.loadError();
                 return;
             }
         } catch (Exception ex) {
-            loadError();
+            data.loadError();
             return;
         }
-        Double reps = Double.parseDouble(rep.getText());
-        Double weights = Double.parseDouble(weight.getText());
-        day.add(weights);
-        day.add(reps);
-        volumes.add(day);
+        try {
+            double reps = Double.parseDouble(rep.getText());
+            double weights = Double.parseDouble(weight.getText());
+            day.add(weights);
+            day.add(reps);
+            volumes.add(day);
 
-        data.addEx(nameInput, volumes);
+            data.addEx(nameInput, volumes);
 
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        stage.close();
-    }
-
-    private void loadError() throws IOException {
-        Stage error = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("ErrorMsgInvalidName.fxml"));
-        Scene errorName = new Scene(root);
-        error.setScene(errorName);
-        error.show();
+            stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+            stage.close();
+        }
+        catch (Exception ex) {
+            data.loadError();
+        }
     }
 }

@@ -38,16 +38,21 @@ public class CR_enterData implements Initializable {
         exName.setText(savedTemp.getName());
     }
     public void OK(ActionEvent e) throws IOException {
-        ArrayList<Double> day = new ArrayList<>();
-        Double reps = Double.parseDouble(rep.getText());
-        Double weights = Double.parseDouble(weight.getText());
-        day.add(weights);
-        day.add(reps);
+        try {
+            ArrayList<Double> day = new ArrayList<>();
+            double reps = Double.parseDouble(rep.getText());
+            double weights = Double.parseDouble(weight.getText());
+            day.add(weights);
+            day.add(reps);
 
-        savedTemp.addVolume(weights, reps);
+            savedTemp.addVolume(weights, reps);
 
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        stage.close();
+            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            stage.close();
+        }
+        catch (Exception ex) {
+            data.loadError();
+        }
     }
 
 }

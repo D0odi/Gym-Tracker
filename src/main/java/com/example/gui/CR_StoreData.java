@@ -46,7 +46,8 @@ public class CR_StoreData implements Initializable {
                 String choice = list.getSelectionModel().getSelectedItem();
                 data.setTempEx(data.getExercise(choice));
 
-                Parent root1 = null;
+
+                Parent root1;
                 try {
                     root1 = FXMLLoader.load(getClass().getResource("enterData.fxml"));
                 } catch (IOException e) {
