@@ -33,8 +33,9 @@ public class CR_Stats implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        System.out.println(selected.getName());
+        progressChart.setTitle(selected.getName() + " Progression");
         XYChart.Series series = new XYChart.Series();
+        series.setName("Total volume");
         ArrayList<ArrayList<Double>> volumes = selected.getVolumes();
         for (int i = 0; i < volumes.size(); i++) {
             String xA = Integer.toString(i+1);
@@ -46,7 +47,7 @@ public class CR_Stats implements Initializable {
 
     public void back(ActionEvent e) throws IOException {
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("CR_ExDataCheck.fxml"));
+        root = FXMLLoader.load(getClass().getResource("ExDataCheck.fxml"));
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
