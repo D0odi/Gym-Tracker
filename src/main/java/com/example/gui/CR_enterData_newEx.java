@@ -24,10 +24,6 @@ public class CR_enterData_newEx {
     @FXML
     private Stage stage;
     @FXML
-    private Scene scene;
-    @FXML
-    private Parent root;
-    @FXML
     private TextField input;
     @FXML
     private TextField weight;

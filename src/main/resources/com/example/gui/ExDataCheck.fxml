@@ -24,7 +24,12 @@
             <Font size="15.0" />
          </font>
       </Text>
-      <Button layoutX="248.0" layoutY="336.0" mnemonicParsing="false" onAction="#back" prefHeight="31.0" prefWidth="72.0" text="Back">
+      <Button layoutX="236.0" layoutY="336.0" mnemonicParsing="false" onAction="#back" prefHeight="31.0" prefWidth="96.0" text="Back">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="see" layoutX="236.0" layoutY="291.0" mnemonicParsing="false" onAction="#seeMore" prefHeight="31.0" prefWidth="96.0" text="See more...">
          <font>
             <Font size="15.0" />
          </font>

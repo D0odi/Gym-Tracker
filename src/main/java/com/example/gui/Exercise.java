@@ -11,11 +11,14 @@ public class Exercise {
         this.name = name;
     }
     public Exercise(String name) {
-      ArrayList<ArrayList<Double>> filler = new ArrayList<>();
-      volumes = filler;
+      this.volumes = null;
       this.name = name;
     }
-  
+
+    public ArrayList<ArrayList<Double>> getVolumes() {
+        return volumes;
+    }
+
     public void setName(String name) {
       this.name = name;
     }
@@ -41,12 +44,6 @@ public class Exercise {
     public int getVolLength() {
       return volumes.size();
     }
-  
-/*  public String getMaxVolume() {
-      
-    }
-  }
-*/
     public String printInfo() {
         StringBuilder info = new StringBuilder();
         int border = 0;
@@ -54,7 +51,7 @@ public class Exercise {
             String temp = volumes.get(i).get(0) + "   /   " + volumes.get(i).get(1) +"\n";
           info.append(temp);
           border++;
-          if(border==13){
+          if(border==11){
               break;
           }
         }
