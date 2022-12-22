@@ -158,7 +158,6 @@ public class Data {
 
     public void addEmptyEx(String name) {
         Exercise newOne = new Exercise(name);
-        exercises.add(newOne);
     }
 
     public void addEx(String name, ArrayList<ArrayList<Double>> volumes) {

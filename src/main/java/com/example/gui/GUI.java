@@ -2,7 +2,9 @@ package com.example.gui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -10,8 +12,9 @@ import java.io.IOException;
 public class GUI extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(GUI.class.getResource("Scene_1.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
+        Parent root = FXMLLoader.load(getClass().getResource("Scene_1.fxml"));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
         stage.setTitle("Gym Tracker");
         stage.setResizable(false);
         stage.setScene(scene);

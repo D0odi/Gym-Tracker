@@ -47,13 +47,16 @@ public class CR_enterData_newEx {
             return;
         }
         try {
-            double reps = Double.parseDouble(rep.getText());
-            double weights = Double.parseDouble(weight.getText());
-            day.add(weights);
-            day.add(reps);
-            volumes.add(day);
-
-            data.addEx(nameInput, volumes);
+            if (!rep.getText().equals("") && !weight.getText().equals("")) {
+                double reps = Double.parseDouble(rep.getText());
+                double weights = Double.parseDouble(weight.getText());
+                day.add(weights);
+                day.add(reps);
+                volumes.add(day);
+                data.addEx(nameInput, volumes);
+            } else {
+                data.addEmptyEx(nameInput);
+            }
 
             stage = (Stage)((Node)e.getSource()).getScene().getWindow();
             stage.close();

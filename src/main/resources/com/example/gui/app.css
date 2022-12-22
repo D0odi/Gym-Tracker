@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;900&display=swap');
+
+#gymText {
+    -fx-font-family: 'Unbounded', cursive;
+    -fx-font-size: 40;
+    -fx-alignment: center;
+}
