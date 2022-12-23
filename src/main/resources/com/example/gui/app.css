@@ -9,7 +9,7 @@
     -fx-font-family: 'Unbounded', cursive;
     -fx-font-size: 40;
     -fx-alignment: center;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 30, 0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, black, 25, 0, 0, 0);
 }
 .button {
     -fx-font-family: 'Unbounded';
@@ -17,4 +17,5 @@
     -fx-faint-focus-color: transparent;
     -fx-text-fill: #133C55;
     -fx-font-size: 20px;
+    -fx-effect: dropshadow(two-pass-box, #242321, 20, 0, 0, 5);
 }
