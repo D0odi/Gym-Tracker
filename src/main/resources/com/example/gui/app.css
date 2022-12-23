@@ -1,7 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;900&display=swap');
 
+.root {
+    -fx-background-color: #cc99ff;
+}
+
 #gymText {
+    -fx-text-fill: #F2F3D9;
     -fx-font-family: 'Unbounded', cursive;
     -fx-font-size: 40;
     -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 30, 0, 0, 0);
+}
+.button {
+    -fx-font-family: 'Unbounded';
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-text-fill: #133C55;
+    -fx-font-size: 20px;
 }
