@@ -21,5 +21,10 @@
             <Font size="20.0" />
          </font>
       </Label>
+      <Button fx:id="oldF1" layoutX="136.0" layoutY="286.0" mnemonicParsing="false" onAction="#Quit" prefHeight="36.0" prefWidth="128.0" text="Quit">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

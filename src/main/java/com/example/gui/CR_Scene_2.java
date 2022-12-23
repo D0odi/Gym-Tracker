@@ -48,7 +48,11 @@ public class CR_Scene_2 implements Initializable {
     }
     public void Quit(ActionEvent e) throws IOException {
         data.reWrite();
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-        stage.close();
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow(); // not to create multiple stages
+        root = FXMLLoader.load(getClass().getResource("Scene_1.fxml"));
+        scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
+        stage.setScene(scene);
+        stage.show();
     }
 }

@@ -69,4 +69,8 @@ public class CR_Scene_1 {
             data.loadError();
         }
     }
+    public void Quit(ActionEvent e) throws IOException {
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        stage.close();
+    }
 }
