@@ -7,24 +7,24 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_Scene_2">
    <children>
-      <Text fx:id="text" layoutX="24.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chosen file:" textAlignment="CENTER" wrappingWidth="363.4755859375">
+      <Text fx:id="fileNameScene2" fill="#f2f3d9" layoutX="12.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chosen file:" textAlignment="CENTER" wrappingWidth="376.4755859375">
          <font>
             <Font size="26.0" />
          </font>
       </Text>
-      <Button layoutX="92.0" layoutY="108.0" mnemonicParsing="false" onAction="#CheckExercise" text="Check Excersise Data">
+      <Button fx:id="checkEx" layoutX="69.0" layoutY="121.0" mnemonicParsing="false" onAction="#CheckExercise" prefHeight="44.0" prefWidth="263.0" text="Check progress" textAlignment="CENTER">
          <font>
-            <Font size="24.0" />
+            <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="107.0" layoutY="186.0" mnemonicParsing="false" onAction="#WriteDown" text="Write down to file">
+      <Button fx:id="writeToEx" layoutX="67.0" layoutY="186.0" mnemonicParsing="false" onAction="#WriteDown" prefHeight="44.0" prefWidth="263.0" text="Write down" textAlignment="CENTER">
          <font>
-            <Font size="24.0" />
+            <Font size="20.0" />
          </font>
       </Button>
-      <Button layoutX="179.0" layoutY="309.0" mnemonicParsing="false" onAction="#Quit" text="Quit">
+      <Button fx:id="saveAndQuit" layoutX="98.0" layoutY="305.0" mnemonicParsing="false" onAction="#Save" prefHeight="44.0" prefWidth="201.0" text="Save and Quit" textAlignment="CENTER">
          <font>
-            <Font size="24.0" />
+            <Font size="20.0" />
          </font>
       </Button>
    </children>

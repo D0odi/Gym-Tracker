@@ -55,6 +55,7 @@ public class CR_StoreData implements Initializable {
                 }
                 Stage enterVolumes = new Stage();
                 Scene scene1 = new Scene(root1);
+                scene1.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
                 enterVolumes.setScene(scene1);
                 enterVolumes.setResizable(false);
                 enterVolumes.show();
@@ -66,6 +67,7 @@ public class CR_StoreData implements Initializable {
         Parent root1 = FXMLLoader.load(getClass().getResource("enterData(NewEx).fxml"));
         Stage enterVolumes = new Stage();
         Scene scene1 = new Scene(root1);
+        scene1.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
         enterVolumes.setScene(scene1);
         enterVolumes.setResizable(false);
         enterVolumes.show();
@@ -74,6 +76,7 @@ public class CR_StoreData implements Initializable {
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
         scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

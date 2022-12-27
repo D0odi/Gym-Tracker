@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;900&display=swap');
+
+.root {
+    -fx-background-color: #cc99ff;
+}
+
+.button {
+    -fx-font-family: 'Unbounded';
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-text-fill: #133C55;
+    -fx-font-size: 15px;
+    -fx-effect: dropshadow(three-pass-box, #242321, 20, 0, 0, 5);
+}

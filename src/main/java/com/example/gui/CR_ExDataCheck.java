@@ -53,6 +53,7 @@ public class CR_ExDataCheck implements Initializable {
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("Stats.fxml"));
         scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
@@ -60,6 +61,7 @@ public class CR_ExDataCheck implements Initializable {
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
         scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

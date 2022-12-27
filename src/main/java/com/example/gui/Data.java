@@ -206,12 +206,23 @@ public class Data {
 
         fw.close();
     }
+    public ArrayList<Double> getBestResult(Exercise ex) {
+        ArrayList<Double> maxResults = ex.getVolumes().get(0);
+        for (ArrayList<Double> day : ex.getVolumes()) {
+            double result = day.get(0) * day.get(1);
+            if (result > maxResults.get(0) * maxResults.get(1)) {
+                maxResults = day;
+            }
+        }
+        return maxResults;
+    }
 
 
     public void loadError() throws IOException{
         Stage error = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("ErrorMsgInvalidName.fxml"));
         Scene errorName = new Scene(root);
+        errorName.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
         error.setScene(errorName);
         error.show();
     }

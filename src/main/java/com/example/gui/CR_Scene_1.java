@@ -30,7 +30,7 @@ public class CR_Scene_1 {
     @FXML
     public void toScene2(ActionEvent e) throws IOException {
         try {
-            stage = (Stage) ((Node) e.getSource()).getScene().getWindow(); // not to create multiple stages
+            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
 
             FileChooser fc = new FileChooser();
             fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
@@ -39,6 +39,7 @@ public class CR_Scene_1 {
 
             root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
             scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
             stage.setScene(scene);
             stage.show();
 
@@ -60,6 +61,7 @@ public class CR_Scene_1 {
                 data.setFile(gym);
                 root = FXMLLoader.load(getClass().getResource("Scene_2.fxml"));
                 scene = new Scene(root);
+                scene.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
                 stage.setScene(scene);
                 stage.show();
             } else {

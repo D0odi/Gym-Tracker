@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 
 public class CR_Scene_2 implements Initializable {
     @FXML
-    private Text text;
+    private Text fileNameScene2;
 
     @FXML
     private Stage stage;
@@ -30,12 +30,13 @@ public class CR_Scene_2 implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        text.setText("Current file: " + data.getFileName());
+        fileNameScene2.setText("Current file: " + data.getFileName());
     }
     public void CheckExercise(ActionEvent e) throws IOException{
         stage = (Stage)((Node)e.getSource()).getScene().getWindow(); // not to create multiple stages
         root = FXMLLoader.load(getClass().getResource("ExDataCheck.fxml"));
         scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("exCheckScene.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }
@@ -43,16 +44,13 @@ public class CR_Scene_2 implements Initializable {
         stage = (Stage)((Node)e.getSource()).getScene().getWindow(); // not to create multiple stages
         root = FXMLLoader.load(getClass().getResource("StoreData.fxml"));
         scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void Quit(ActionEvent e) throws IOException {
-        data.reWrite();
-        stage = (Stage)((Node)e.getSource()).getScene().getWindow(); // not to create multiple stages
-        root = FXMLLoader.load(getClass().getResource("Scene_1.fxml"));
-        scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
+    }
+    public void Save(ActionEvent e) throws IOException {
+        data.reWrite();
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+        stage.close();
     }
 }
