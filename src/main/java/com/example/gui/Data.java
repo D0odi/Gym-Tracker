@@ -112,10 +112,6 @@ public class Data {
         return null;
     }
 
-    public void getExInfo(int n) { //gets info from exercises
-        exercises.get(n).printInfo();
-    }
-
     public static void store_data() {
         double w, r;
         String name = null, wTemp = null, rTemp = null;

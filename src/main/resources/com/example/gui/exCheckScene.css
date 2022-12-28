@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;900&display=swap');
 
+
 .root {
     -fx-background-color: #cc99ff;
 }
@@ -9,6 +10,35 @@
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
     -fx-text-fill: #133C55;
-    -fx-font-size: 15px;
+    -fx-font-size: 16px;
     -fx-effect: dropshadow(three-pass-box, #242321, 20, 0, 0, 5);
+}
+.list-cell:filled:hover {
+    -fx-background-color: #23B5D3;
+    -fx-text-fill: white;
+}
+.list-cell {
+    -fx-font-family: 'Unbounded', cursive;
+    -fx-font-size: 12px;
+}
+.table-view .table-cell{
+    -fx-alignment:center;
+    -fx-font-size: 12px;
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+ }
+
+#resultsList {
+    -fx-text-fill: #F2F3D9;
+    -fx-font-family: 'Unbounded', cursive;
+    -fx-font-size: 15;
+    -fx-alignment: center;
+}
+
+#ce {
+    -fx-text-fill: #F2F3D9;
+    -fx-font-family: 'Unbounded', cursive;
+    -fx-font-size: 20;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, #F2F3D9, 30, 0, 0, 0);
 }

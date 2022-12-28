@@ -1,5 +1,8 @@
 package com.example.gui;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 
 public class Exercise {
@@ -44,17 +47,10 @@ public class Exercise {
     public int getVolLength() {
       return volumes.size();
     }
-    public String printInfo() {
-        StringBuilder info = new StringBuilder();
-        int border = 0;
-        for (int i = volumes.size() - 1; i >= 0; i--) {
-            String temp = volumes.get(i).get(0) + "   /   " + volumes.get(i).get(1) +"\n";
-          info.append(temp);
-          border++;
-          if(border==11){
-              break;
-          }
-        }
-        return info.toString();
+    public Double weightsInfo(int day) {
+        return volumes.get(day).get(0);
+    }
+    public Double repsInfo(int day) {
+        return volumes.get(day).get(0);
     }
 }
