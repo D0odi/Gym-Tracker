@@ -44,7 +44,7 @@ public class CR_Scene_2 implements Initializable {
         stage = (Stage)((Node)e.getSource()).getScene().getWindow(); // not to create multiple stages
         root = FXMLLoader.load(getClass().getResource("StoreData.fxml"));
         scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("writeDown.css").toExternalForm());
         stage.setScene(scene);
         stage.show();
     }

@@ -8,19 +8,19 @@
 
 <AnchorPane prefHeight="140.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_enterData_newEx">
    <children>
-      <Text layoutX="13.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" wrappingWidth="88.13671875">
+      <Text fx:id="w" layoutX="4.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" textAlignment="CENTER" wrappingWidth="95.13671875">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
-      <Text layoutX="34.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reps:" wrappingWidth="50.13671875">
+      <Text fx:id="e" layoutX="17.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reps:" textAlignment="CENTER" wrappingWidth="69.13671875">
          <font>
             <Font size="20.0" />
          </font>
       </Text>
       <TextField fx:id="weight" layoutX="99.0" layoutY="39.0" prefHeight="25.0" prefWidth="88.0" />
       <TextField fx:id="rep" layoutX="99.0" layoutY="66.0" prefHeight="25.0" prefWidth="88.0" />
-      <Text layoutX="24.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" wrappingWidth="88.13671875">
+      <Text fx:id="q" layoutX="7.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name:" textAlignment="CENTER" wrappingWidth="88.13671875">
          <font>
             <Font size="20.0" />
          </font>

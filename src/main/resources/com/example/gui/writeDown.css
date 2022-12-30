@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;900&display=swap');
+
+.root {
+    -fx-background-color: #cc99ff;
+}
+
+.button {
+    -fx-font-family: 'Unbounded';
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+    -fx-text-fill: #133C55;
+    -fx-font-size: 15px;
+    -fx-effect: dropshadow(three-pass-box, #242321, 20, 0, 0, 5);
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #23B5D3;
+    -fx-text-fill: white;
+}
+.list-cell {
+    -fx-font-family: 'Unbounded', cursive;
+    -fx-font-size: 12px;
+}
+.list-view .list-cell{
+    -fx-alignment:center;
+    -fx-font-size: 12px;
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+ }
+ #choose {
+    -fx-text-fill: black;
+    -fx-font-family: 'Unbounded', cursive;
+    -fx-font-size: 17;
+ }

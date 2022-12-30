@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="462.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_ExDataCheck">
    <children>
-      <ListView fx:id="list" layoutX="20.0" layoutY="49.0" prefHeight="392.0" prefWidth="174.0" />
+      <ListView fx:id="list" layoutX="20.0" layoutY="56.0" prefHeight="385.0" prefWidth="174.0" />
       <Text fx:id="ce" layoutX="12.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exercises" textAlignment="CENTER" wrappingWidth="187.650390625">
          <font>
             <Font size="17.0" />

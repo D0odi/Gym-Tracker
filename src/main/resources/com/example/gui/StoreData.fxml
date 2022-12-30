@@ -6,20 +6,20 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_StoreData">
+<AnchorPane prefHeight="426.0" prefWidth="237.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_StoreData">
     <children>
-        <ListView fx:id="list" layoutX="54.0" layoutY="50.0" prefHeight="267.0" prefWidth="145.0" />
-        <Text layoutX="54.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose exercise:" wrappingWidth="155.650390625">
+        <ListView fx:id="list" layoutX="12.0" layoutY="67.0" prefHeight="252.0" prefWidth="213.0" />
+        <Text fx:id="choose" layoutX="4.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choose exercise" textAlignment="CENTER" wrappingWidth="229.650390625">
             <font>
                 <Font size="17.0" />
             </font>
         </Text>
-      <Button layoutX="70.0" layoutY="331.0" mnemonicParsing="false" onAction="#newOne" text="New Exercise?">
+      <Button alignment="CENTER" layoutX="42.0" layoutY="331.0" mnemonicParsing="false" onAction="#newOne" prefHeight="31.0" prefWidth="156.0" text="New Exercise?" textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="230.0" layoutY="331.0" mnemonicParsing="false" onAction="#back" prefHeight="31.0" prefWidth="102.0" text="Back">
+      <Button alignment="CENTER" layoutX="69.0" layoutY="374.0" mnemonicParsing="false" onAction="#back" prefHeight="31.0" prefWidth="102.0" text="Back" textAlignment="CENTER">
          <font>
             <Font size="15.0" />
          </font>

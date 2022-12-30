@@ -8,12 +8,12 @@
 
 <AnchorPane prefHeight="150.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_enterData">
     <children>
-        <Text layoutX="13.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" wrappingWidth="88.13671875">
+        <Text fx:id="w" layoutX="14.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" wrappingWidth="88.13671875">
             <font>
                 <Font size="20.0" />
             </font>
         </Text>
-        <Text layoutX="34.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reps:" wrappingWidth="50.13671875">
+        <Text fx:id="e" layoutX="25.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reps:" wrappingWidth="64.13671875">
             <font>
                 <Font size="20.0" />
             </font>
@@ -25,7 +25,7 @@
                 <Font size="13.0" />
             </font>
         </Button>
-      <Text fx:id="exName" layoutX="8.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="181.13671875">
+      <Text fx:id="exName" layoutX="8.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="181.13671875">
          <font>
             <Font size="18.0" />
          </font>

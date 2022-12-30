@@ -40,6 +40,8 @@ public class CR_Stats implements Initializable {
     private Text mostResent = new Text("");
     @FXML
     private Text topResult = new Text("");
+    @FXML
+    private Text scene_name = new Text("");
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -47,7 +49,8 @@ public class CR_Stats implements Initializable {
             double weightsInfo = 0;
             double repsInfo = 0;
             DecimalFormat df = new DecimalFormat("#.0");
-            progressChart.setTitle(selected.getName() + " Progression");
+            progressChart.setTitle(null);
+            scene_name.setText(selected.getName() + " Progression");
             XYChart.Series weight = new XYChart.Series();
             weight.setName("Weight");
             XYChart.Series reps = new XYChart.Series();

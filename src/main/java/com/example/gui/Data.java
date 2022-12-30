@@ -216,9 +216,9 @@ public class Data {
 
     public void loadError() throws IOException{
         Stage error = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("ErrorMsgInvalidName.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("ErrorMsg.fxml"));
         Scene errorName = new Scene(root);
-        errorName.getStylesheets().add(getClass().getResource("app.css").toExternalForm());
+        errorName.getStylesheets().add(getClass().getResource("error.css").toExternalForm());
         error.setScene(errorName);
         error.show();
     }
