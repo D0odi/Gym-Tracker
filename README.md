@@ -1,7 +1,7 @@
 # Gym-Tracker
 Scenes directory:               Gym-Tracker/src/main/resources/com/example/gui/
 
-Controllers/GUI(Main) directory:     Gym-Tracker/src/main/java/com/example/gui/
+Controllers/Main_1(Main) directory:     Gym-Tracker/src/main/java/com/example/gui/
 ## How to use
 1) Download and run GT.exe.
 
