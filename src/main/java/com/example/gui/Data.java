@@ -3,8 +3,6 @@ package com.example.gui;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -18,26 +16,36 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Data {
-    private Exercise temp;
-    private ArrayList<String> list;
-    private static final Data data = new Data();
-
     private Data() {
     }
-
-    private File file;
-    private ArrayList<Exercise> exercises = new ArrayList<>();
-
+    private static final Data data = new Data();
     public static Data getInstance() {
         return data;
     }
 
-    public String getFileName() {
-        return file.getName();
-    }
+    private Exercise temp;
+    private File file;
+    private ArrayList<Exercise> exercises = new ArrayList<>();
 
     public void setFile(File file) {
         this.file = file;
+    }
+    public void setTempEx(Exercise choice) {
+        this.temp = choice;
+    }
+    public String getFileName() {
+        return file.getName();
+    }
+    public Exercise getExercise(String name) {
+        for (Exercise n : exercises) {
+            if (n.getName().equals(name)) {
+                return n;
+            }
+        }
+        return null;
+    }
+    public Exercise getTemp() {
+        return temp;
     }
 
     public void read_data() throws IOException {
@@ -51,15 +59,12 @@ public class Data {
         while (file_scan.hasNext()) {
             ArrayList<ArrayList<Double>> volume = new ArrayList<>();
             String line = file_scan.nextLine();
-            System.out.println(line);
 
             for_file = exName.matcher(line);
             for_file.find();
             String name = for_file.group();
             line = line.replaceFirst(name, "");
             name = name.substring(0, name.length() - 1);
-            System.out.println(line);
-            System.out.println();
             for_file = ptVolume.matcher(line);
 
             while (for_file.find()) {
@@ -68,19 +73,16 @@ public class Data {
                 try {
                     set = toVolumes(input, toNums);
                 } catch (Exception ex) {
-                    System.out.print(line);
                     set.add(0.0);
                 }
                 volume.add(set);
             }
-
             Exercise newEx = new Exercise(name, volume);
             exercises.add(newEx);
         }
 
         file_scan.close();
-    }
-
+    } // read and store data from txt file
     public ArrayList<Double> toVolumes(String data, Pattern pt) {
         ArrayList<Double> nums = new ArrayList<>();
         Matcher converter = pt.matcher(data);
@@ -93,80 +95,25 @@ public class Data {
         nums.add(reps);
 
         return nums;
-    }
+    } // creates array of size 2 with weight and reps
 
-    public ArrayList<String> listEx() { //returns a string to print out
+    public ArrayList<String> listEx() {
         ArrayList<String> names = new ArrayList<>();
         for (Exercise n : exercises) {
             names.add(n.getName());
         }
         return names;
-    }
-
-    public Exercise getExercise(String name) {
-        for (Exercise n : exercises) {
-            if (n.getName().equals(name)) {
-                return n;
-            }
-        }
-        return null;
-    }
-
-    public static void store_data() {
-        double w, r;
-        String name = null, wTemp = null, rTemp = null;
-
-  /*      data.addEmptyEx("New one?");
-        System.out.println(data.listEx());
-       int spot = scnr.nextInt();
-
-        boolean newExer = false;
-        if (spot == acc.getListSize() - 1) {
-            newExer = true;
-            System.out.print("Enter name: ");
-            name = scnr.next();
-        }
-
-        System.out.print("Enter weight: ");
-        wTemp = scnr.next();
-        System.out.print("Enter reps: ");
-        rTemp = scnr.next();
-
-        try {
-            w = Double.parseDouble(wTemp);
-            r = Double.parseDouble(rTemp);
-        }
-        catch (NumberFormatException e) {
-            System.out.println("Wrong Input Format\n");
-            return;
-        }
-
-        if (newExer) {
-            acc.writeToNewEx(name, w, r);
-        }
-        else {
-            acc.writeToExistingEx(spot, w, r);
-            acc.deleteEx(acc.getListSize() - 1);
-        }
-
-   */
-    }
+    } //returns a list of exercises names
 
     public void addEmptyEx(String name) {
         Exercise newOne = new Exercise(name);
+        exercises.add(newOne);
     }
 
     public void addEx(String name, ArrayList<ArrayList<Double>> volumes) {
         exercises.add(new Exercise(name, volumes));
     }
 
-    public void setTempEx(Exercise choice) {
-        this.temp = choice;
-    }
-
-    public Exercise getTemp() {
-        return temp;
-    }
 
     public void reWrite() throws IOException {
         FileWriter fw = new FileWriter(file);

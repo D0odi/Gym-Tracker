@@ -17,7 +17,7 @@
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="writeToEx" layoutX="67.0" layoutY="186.0" mnemonicParsing="false" onAction="#WriteDown" prefHeight="44.0" prefWidth="263.0" text="Write down" textAlignment="CENTER">
+      <Button fx:id="writeToEx" layoutX="67.0" layoutY="186.0" mnemonicParsing="false" onAction="#WriteDown" prefHeight="44.0" prefWidth="263.0" text="Make a record" textAlignment="CENTER">
          <font>
             <Font size="20.0" />
          </font>

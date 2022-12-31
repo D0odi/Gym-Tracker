@@ -55,10 +55,15 @@ public class CR_ExDataCheck implements Initializable {
                 resultsList.getItems().clear();
                 String choice = list.getSelectionModel().getSelectedItem();
                 data.setTempEx(data.getExercise(choice));
-                for (int i = data.getTemp().getVolLength() - 1; i >= 0; i--) {
-                    days.add(new Day(data.getTemp().getVolumes().get(i).get(0), data.getTemp().getVolumes().get(i).get(1)));
+                if (data.getTemp().getVolumes() != null) {
+                    for (int i = data.getTemp().getVolLength() - 1; i >= 0; i--) {
+                        days.add(new Day(data.getTemp().getVolumes().get(i).get(0), data.getTemp().getVolumes().get(i).get(1)));
+                        resultsList.setItems(days);
+                    }
                 }
-                resultsList.setItems(days);
+                else {
+                    resultsList.setPlaceholder(new Label("No records \n     found"));
+                }
                 see.setVisible(true);
             }
         });

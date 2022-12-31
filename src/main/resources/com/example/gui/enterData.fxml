@@ -6,26 +6,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="150.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_enterData">
+<AnchorPane prefHeight="150.0" prefWidth="257.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui.CR_enterData">
     <children>
-        <Text fx:id="w" layoutX="14.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" wrappingWidth="88.13671875">
+        <Text fx:id="w" layoutX="44.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight:" wrappingWidth="88.13671875">
             <font>
                 <Font size="20.0" />
             </font>
         </Text>
-        <Text fx:id="e" layoutX="25.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reps:" wrappingWidth="64.13671875">
+        <Text fx:id="e" layoutX="55.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reps:" wrappingWidth="64.13671875">
             <font>
                 <Font size="20.0" />
             </font>
         </Text>
-        <TextField fx:id="weight" layoutX="99.0" layoutY="44.0" prefHeight="25.0" prefWidth="88.0" />
-        <TextField fx:id="rep" layoutX="99.0" layoutY="71.0" prefHeight="25.0" prefWidth="88.0" />
-        <Button layoutX="76.0" layoutY="109.0" mnemonicParsing="false" onAction="#OK" prefHeight="25.0" prefWidth="50.0" text="OK">
+        <TextField fx:id="weight" layoutX="129.0" layoutY="46.0" prefHeight="25.0" prefWidth="88.0" />
+        <TextField fx:id="rep" layoutX="129.0" layoutY="73.0" prefHeight="25.0" prefWidth="88.0" />
+        <Button layoutX="106.0" layoutY="111.0" mnemonicParsing="false" onAction="#OK" prefHeight="25.0" prefWidth="50.0" text="OK">
             <font>
                 <Font size="13.0" />
             </font>
         </Button>
-      <Text fx:id="exName" layoutX="8.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="181.13671875">
+      <Text fx:id="exName" layoutX="1.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="257.0">
          <font>
             <Font size="18.0" />
          </font>
