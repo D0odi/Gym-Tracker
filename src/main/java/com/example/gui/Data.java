@@ -16,6 +16,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Data {
+
+    // DATA instance declaration
     private Data() {
     }
     private static final Data data = new Data();
@@ -23,10 +25,16 @@ public class Data {
         return data;
     }
 
+
+
+    // Variables
     private Exercise temp;
     private File file;
     private ArrayList<Exercise> exercises = new ArrayList<>();
 
+
+
+    // Getters and Setters
     public void setFile(File file) {
         this.file = file;
     }
@@ -48,6 +56,9 @@ public class Data {
         return temp;
     }
 
+
+
+    // Data related methods
     public void read_data() throws IOException {
         Scanner file_scan = new Scanner(file);
 
@@ -96,7 +107,6 @@ public class Data {
 
         return nums;
     } // creates array of size 2 with weight and reps
-
     public ArrayList<String> listEx() {
         ArrayList<String> names = new ArrayList<>();
         for (Exercise n : exercises) {
@@ -104,17 +114,13 @@ public class Data {
         }
         return names;
     } //returns a list of exercises names
-
     public void addEmptyEx(String name) {
         Exercise newOne = new Exercise(name);
         exercises.add(newOne);
-    }
-
+    } // creates exercise with no volumes
     public void addEx(String name, ArrayList<ArrayList<Double>> volumes) {
         exercises.add(new Exercise(name, volumes));
     }
-
-
     public void reWrite() throws IOException {
         FileWriter fw = new FileWriter(file);
         Locale.setDefault(Locale.US);
@@ -148,7 +154,7 @@ public class Data {
             fw.write(s.charAt(i));
 
         fw.close();
-    }
+    } // rewrites the file according to user changes after hitting "Save and Quit";
     public ArrayList<Double> getBestResult(Exercise ex) {
         ArrayList<Double> maxResults = ex.getVolumes().get(0);
         for (ArrayList<Double> day : ex.getVolumes()) {
@@ -158,9 +164,13 @@ public class Data {
             }
         }
         return maxResults;
+    } // returns best result of exercise
+    public void deleteEx(Exercise exercise) {
+        exercises.remove(exercise);
     }
 
 
+    // Error loader
     public void loadError() throws IOException{
         Stage error = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("ErrorMsg.fxml"));

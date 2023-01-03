@@ -16,17 +16,17 @@
             <Font size="17.0" />
          </font>
       </Text>
-      <Button layoutX="227.0" layoutY="402.0" mnemonicParsing="false" onAction="#back" prefHeight="31.0" prefWidth="131.0" text="Back">
+      <Button layoutX="227.0" layoutY="410.0" mnemonicParsing="false" onAction="#back" prefHeight="31.0" prefWidth="131.0" text="Back">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button fx:id="see" layoutX="228.0" layoutY="347.0" mnemonicParsing="false" onAction="#seeMore" prefHeight="31.0" prefWidth="131.0" text="See more...">
+      <Button fx:id="see" layoutX="229.0" layoutY="321.0" mnemonicParsing="false" onAction="#seeMore" prefHeight="31.0" prefWidth="131.0" text="See more...">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <TableView fx:id="resultsList" layoutX="207.0" layoutY="19.0" prefHeight="307.0" prefWidth="174.0">
+      <TableView fx:id="resultsList" layoutX="207.0" layoutY="19.0" prefHeight="288.0" prefWidth="174.0">
         <columns>
           <TableColumn fx:id="weightResult" prefWidth="76.0" text="Weight" />
           <TableColumn fx:id="repsResult" prefWidth="74.0" text="Reps" />
@@ -35,5 +35,10 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <Button layoutX="227.0" layoutY="366.0" mnemonicParsing="false" onAction="#DeleteFromTableOrList" prefHeight="31.0" prefWidth="131.0" text="Delete">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

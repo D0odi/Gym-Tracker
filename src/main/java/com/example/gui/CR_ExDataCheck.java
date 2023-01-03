@@ -57,7 +57,7 @@ public class CR_ExDataCheck implements Initializable {
                 data.setTempEx(data.getExercise(choice));
                 if (data.getTemp().getVolumes() != null) {
                     for (int i = data.getTemp().getVolLength() - 1; i >= 0; i--) {
-                        days.add(new Day(data.getTemp().getVolumes().get(i).get(0), data.getTemp().getVolumes().get(i).get(1)));
+                        days.add(new Day(i, data.getTemp().getVolumes().get(i).get(0), data.getTemp().getVolumes().get(i).get(1)));
                         resultsList.setItems(days);
                     }
                 }
@@ -84,6 +84,17 @@ public class CR_ExDataCheck implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
-
-
+    public void DeleteFromTableOrList(ActionEvent e) throws IOException {
+        Day choice = null;
+        String exName = null;
+        if (resultsList.getSelectionModel().getSelectedItem() != null) {
+            choice = resultsList.getSelectionModel().getSelectedItem();
+            resultsList.getItems().removeAll(choice);
+            data.getTemp().deleteVolume(choice.getNumber());
+        } else if (list.getSelectionModel().getSelectedItem() != null) {
+            exName = list.getSelectionModel().getSelectedItem();
+            list.getItems().removeAll(exName);
+            data.deleteEx(data.getExercise(exName));
+        }
+    }
 }
