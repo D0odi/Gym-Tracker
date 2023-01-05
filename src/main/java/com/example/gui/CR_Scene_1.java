@@ -19,14 +19,12 @@ import java.util.ResourceBundle;
 
 public class CR_Scene_1 {
     Data data = Data.getInstance();
-
     @FXML
     private Stage stage;
     @FXML
     private Scene scene;
     @FXML
     private Parent root;
-
     @FXML
     public void toScene2(ActionEvent e) throws IOException {
         try {

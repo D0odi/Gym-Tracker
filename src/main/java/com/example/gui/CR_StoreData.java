@@ -22,7 +22,6 @@ import java.util.Scanner;
 
 public class CR_StoreData implements Initializable {
     Data data = Data.getInstance();
-
     private Stage stage;
     @FXML
     private Scene scene;
@@ -30,13 +29,6 @@ public class CR_StoreData implements Initializable {
     private Parent root;
     @FXML
     private ListView<String> list;
-
-    @FXML
-    private Text text;
-
-    private Scanner scnr = new Scanner(System.in);
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         list.getItems().addAll(data.listEx());
@@ -45,8 +37,6 @@ public class CR_StoreData implements Initializable {
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
                 String choice = list.getSelectionModel().getSelectedItem();
                 data.setTempEx(data.getExercise(choice));
-
-
                 Parent root1;
                 try {
                     root1 = FXMLLoader.load(getClass().getResource("enterData.fxml"));

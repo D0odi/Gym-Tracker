@@ -42,7 +42,6 @@ public class CR_Stats implements Initializable {
     private Text topResult = new Text("");
     @FXML
     private Text scene_name = new Text("");
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {

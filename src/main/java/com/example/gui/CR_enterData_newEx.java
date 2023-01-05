@@ -19,7 +19,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CR_enterData_newEx {
-
     Data data = Data.getInstance();
     @FXML
     private Stage stage;

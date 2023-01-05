@@ -16,18 +16,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class CR_Scene_2 implements Initializable {
+    Data data = Data.getInstance();
     @FXML
     private Text fileNameScene2;
-
     @FXML
     private Stage stage;
     @FXML
     private Scene scene;
     @FXML
     private Parent root;
-
-    Data data = Data.getInstance();
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         fileNameScene2.setText("Current file: " + data.getFileName());

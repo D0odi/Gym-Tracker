@@ -17,14 +17,9 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class CR_enterData implements Initializable {
-
     Data data = Data.getInstance();
     @FXML
     private Stage stage ;
-    @FXML
-    private Scene scene;
-    @FXML
-    private Parent root;
     @FXML
     private TextField weight;
     @FXML

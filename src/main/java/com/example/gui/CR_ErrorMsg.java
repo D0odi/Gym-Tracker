@@ -6,8 +6,6 @@ import javafx.scene.Node;
 import javafx.stage.Stage;
 
 public class CR_ErrorMsg {
-
-    Data data = Data.getInstance();
     @FXML
     private Stage stage;
     public void close(ActionEvent e) {
