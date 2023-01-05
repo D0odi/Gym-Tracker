@@ -17,7 +17,7 @@ import java.util.regex.Pattern;
 
 public class Data {
 
-    // DATA instance declaration
+    // -------------------DATA instance declaration-------------------
     private Data() {
     }
     private static final Data data = new Data();
@@ -27,14 +27,14 @@ public class Data {
 
 
 
-    // Variables
+    // -------------------Variables-------------------
     private Exercise temp;
     private File file;
     private ArrayList<Exercise> exercises = new ArrayList<>();
 
 
 
-    // Getters and Setters
+    // -------------------Getters and Setters-------------------
     public void setFile(File file) {
         this.file = file;
     }
@@ -58,7 +58,7 @@ public class Data {
 
 
 
-    // Data related methods
+    // -------------------Data related methods-------------------
     public void read_data() throws IOException {
         Scanner file_scan = new Scanner(file);
 
@@ -170,7 +170,7 @@ public class Data {
     }
 
 
-    // Error loader
+    // -------------------Error loader-------------------
     public void loadError() throws IOException{
         Stage error = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("ErrorMsg.fxml"));

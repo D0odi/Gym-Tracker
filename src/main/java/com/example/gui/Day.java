@@ -5,16 +5,16 @@ package com.example.gui;
  */
 
 public class Day {
-    public int number;
+    public int dayNumber;
     public double weights;
     public double reps;
     public Day(int number, double weights, double reps) {
-        this.number = number;
+        this.dayNumber = number;
         this.reps = reps;
         this.weights = weights;
     }
-    public int getNumber() {
-        return number;
+    public int getDayNumber() {
+        return dayNumber;
     }
     public double getReps() {
         return reps;

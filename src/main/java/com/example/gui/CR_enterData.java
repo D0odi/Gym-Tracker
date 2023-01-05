@@ -26,11 +26,9 @@ public class CR_enterData implements Initializable {
     private TextField rep;
     @FXML
     private Text exName;
-    @FXML
-    private Exercise savedTemp = data.getTemp();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        exName.setText(savedTemp.getName());
+        exName.setText(data.getTemp().getName());
     }
     public void OK(ActionEvent e) throws IOException {
         try {
@@ -40,7 +38,7 @@ public class CR_enterData implements Initializable {
             day.add(weights);
             day.add(reps);
 
-            savedTemp.addVolume(weights, reps);
+            data.getTemp().addVolume(weights, reps);
 
             stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             stage.close();

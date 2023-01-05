@@ -8,8 +8,7 @@ import java.util.ArrayList;
 public class Exercise {
 
 
-
-    // Constructors
+    // -------------------Constructors-------------------
     public Exercise(String name, ArrayList<ArrayList<Double>> volume) {
         this.volumes = volume;
         this.name = name;
@@ -21,13 +20,13 @@ public class Exercise {
 
 
 
-    // Variables
+    // -------------------Variables-------------------
     private ArrayList<ArrayList<Double>> volumes;
     private String name;
 
 
 
-    // Getters
+    // -------------------Getters-------------------
     public ArrayList<ArrayList<Double>> getVolumes() {
         return volumes;
     }
@@ -43,7 +42,7 @@ public class Exercise {
 
 
 
-    // Methods
+    // -------------------Methods-------------------
     public void deleteVolume(int num) {
         volumes.remove(num);
     }

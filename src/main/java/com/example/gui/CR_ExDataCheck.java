@@ -29,7 +29,6 @@ public class CR_ExDataCheck implements Initializable {
     private Parent root;
     @FXML
     private ListView<String> list;
-
     @FXML
     private TableView<Day> resultsList = new TableView<>();;
     @FXML
@@ -89,7 +88,7 @@ public class CR_ExDataCheck implements Initializable {
         if (resultsList.getSelectionModel().getSelectedItem() != null) {
             choice = resultsList.getSelectionModel().getSelectedItem();
             resultsList.getItems().removeAll(choice);
-            data.getTemp().deleteVolume(choice.getNumber());
+            data.getTemp().deleteVolume(choice.getDayNumber());
         } else if (list.getSelectionModel().getSelectedItem() != null) {
             exName = list.getSelectionModel().getSelectedItem();
             list.getItems().removeAll(exName);
